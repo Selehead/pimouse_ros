@@ -1,6 +1,6 @@
 sudo: required
-dist: trusty
+dist: Xenial
 
-scripts:
+script:
   - bash -xve ./test/travis_ros_install.bash
 
