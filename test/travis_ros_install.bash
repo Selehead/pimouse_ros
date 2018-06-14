@@ -1,9 +1,6 @@
 #!/bin/bash -xve
 
 #required packages
-sudo pip install --upgrade pip
-python --version
-pip install urllib3[secure]
 pip install catkin_pkg
 pip install empy
 pip install pyyaml
