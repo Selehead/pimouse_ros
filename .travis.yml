@@ -4,4 +4,5 @@ dist: trusty
 script:
   - bash -xve ./test/travis_prepare.bash
   - source ~/catkin_ws/devel/setup.bash
+
 - bash -xve ./test/travis_test.bash
