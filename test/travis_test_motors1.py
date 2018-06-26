@@ -1,4 +1,4 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 #encording: utf8
 import rospy, unittest, rostest
 import rosnode
