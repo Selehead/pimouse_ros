@@ -21,7 +21,7 @@ class MotorTest(unittest.TestCase):
         m.left_hz = 123
         m.right_hz = 456
         for i in range(10):
-            pub.pablish(m)
+            pub.publish(m)
             time.sleep(0.1)
 
         self.file_check("rtmotor_raw_l0",m.left_hz,"wrong left value from motor_raw")
