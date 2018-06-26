@@ -28,7 +28,7 @@ class MotorTest(unittest.TestCase):
         self.file_check("rtmotor_raw_r0",m.right_hz,"wrong right value from motor_raw")
 
     def test_put_cmd_vel(self):
-        pub = rospy.publisher('/cmd_vel',Twist)
+        pub = rospy.Publisher('/cmd_vel',Twist)
         m = Twist()
         m.linear.x = 0.1414
         m.anglar.z = 1.57
