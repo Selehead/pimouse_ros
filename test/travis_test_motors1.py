@@ -31,7 +31,7 @@ class MotorTest(unittest.TestCase):
         pub = rospy.Publisher('/cmd_vel',Twist)
         m = Twist()
         m.linear.x = 0.1414
-        m.anglar.z = 1.57
+        m.angular.z = 1.57
         for i in range(10):
             pub.publish(m)
             time.sleep(0.1)
