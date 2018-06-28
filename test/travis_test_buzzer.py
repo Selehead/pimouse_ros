@@ -32,7 +32,7 @@ class BuzzerTest(unittest.TestCase):
         goal.durations = [2, 2, 2, 2]
 
         self.client.wait_for_server()
-        self.client.send_goal(goal,feedback_cb = self.feedback_cb)
+        self.client.send_goal(goal,feedback_cb=self.feedback_cb)
         self.client.wait_for_result()
 
         self.assertTrue(self.client.get_result(),"invalid result")
@@ -40,7 +40,7 @@ class BuzzerTest(unittest.TestCase):
 
         ###preemption###
         self.device_values = []
-        self.client.send_goal(goal.feedback_cb=self,feedback_cb)
+        self.client.send_goal(goal,feedback_cb=self.feedback_cb)
         self.client.wait_for_result(rospy.duration.from_sec(0.5))
 
         self.assertFalse(self.client.get_result(),"stop is requested but return true")
