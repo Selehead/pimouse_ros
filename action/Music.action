@@ -1,4 +1,4 @@
-unint16[] freqs
+uint16[] freqs
 float32[] durations
 ---
 bool finished
