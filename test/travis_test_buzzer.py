@@ -46,7 +46,7 @@ class BuzzerTest(unittest.TestCase):
         self.assertFalse(self.client.get_result(),"stop is requested but return true")
         self.assertFalse(goal.freqs == self.device_values,"not stopped")
 
-    def feedback_cb(self.feedback):
+    def feedback_cb(self,feedback):
         with open("/dev/rtbuzzer0","r") as f
             data = f.readline()
             self.device_values.append(int(data.rstrip()))
