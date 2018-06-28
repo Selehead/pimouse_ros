@@ -106,7 +106,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pimouse_ros
-   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs
+   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs actionlib_msgs
 #  DEPENDS system_lib
 )
 
