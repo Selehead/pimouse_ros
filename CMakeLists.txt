@@ -70,8 +70,8 @@ add_action_files(
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
    DEPENDENCIES
-   std_msgs
    actionlib_msgs
+   std_msgs
 )
 
 ################################################
@@ -106,7 +106,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pimouse_ros
-   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs TimedMotion
+   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs
 #  DEPENDS system_lib
 )
 
