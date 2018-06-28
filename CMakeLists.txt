@@ -55,11 +55,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+   FILES
+   TimedMotion.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -106,7 +105,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pimouse_ros
-   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs 
+   CATKIN_DEPENDS rospy std_msgs message_runtime std_srvs TimedMotion 
 #  DEPENDS system_lib
 )
 
