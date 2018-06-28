@@ -5,7 +5,7 @@ import rosnode
 import time
 
 from std_msgs.msg import UInt16
-from pimoouse_ros import MusicAction, MusicResult, MusicFeedback, MusicGoal
+from pimouse_ros import MusicAction, MusicResult, MusicFeedback, MusicGoal
 
 class BuzzerTest(unittest.TestCase):
     def setUp(self):
