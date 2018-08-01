@@ -8,7 +8,7 @@ from pimouse_ros.srv import TimedMotion
 
 class Motor():
     def __init__(self):
-        if not self.set_power(False): sys.exit(1)
+        if not self.set_power(False): sys.exit()
 
         rospy.on_shutdown(self.set_power)
         self.sub_raw = rospy.Subscriber('motor_raw', motorfreqs, self.callback_raw_freq)
@@ -33,22 +33,16 @@ class Motor():
 
     def set_raw_freq(self,left_hz,right_hz):
         if not self.is_on:
-            try:
-                with open("/dev/rtmotor_raw_l0","w") as lf,\
-                     open("/dev/rtmotor_raw_r0","w") as rf:
-                     lf.write("0\n")
-                     rf.write("0\n")
-            except:
-                rospy.logerr("cannot write to rtmotor_raw_*")
+            rospy.logerr("not enpower")
+            return
 
-        else:
-            try:
-                with open("/dev/rtmotor_raw_l0","w") as lf,\
-                     open("/dev/rtmotor_raw_r0","w") as rf:
-                     lf.write(str(int(round(left_hz))) + "\n")
-                     rf.write(str(int(round(right_hz))) + "\n")
-            except:
-                rospy.logerr("cannot write to rtmotor_raw_*")
+        try:
+            with open("/dev/rtmotor_raw_l0","w") as lf,\
+                 open("/dev/rtmotor_raw_r0","w") as rf:
+                lf.write(str(int(round(left_hz))) + "\n")
+                rf.write(str(int(round(right_hz))) + "\n")
+        except:
+            rospy.logerr("cannot write to rtmotor_raw_*")
 
     def callback_raw_freq(self,message):
         self.set_raw_freq(message.left_hz,message.right_hz)

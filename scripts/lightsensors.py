@@ -4,7 +4,7 @@ import sys, rospy
 from pimouse_ros.msg import lightsensorvalues
 
 def get_freq():
-    f = rospy.get_param('lightsensors_freq',10)
+    f = rospy.get_param('lightsensors_freq',5)
     try:
         if f <= 0.0:
             raise Exception()
